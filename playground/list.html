@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <style type="text/css">
+
+            * {
+                margin: 0px;
+                padding: 0px;
+            }
+
+            .header {
+                margin: auto;
+            }
+
+            ul {
+                list-style: none;
+            }
+
+            a {
+                text-decoration: none;
+                color: white;
+                background-color: black;
+            }
+
+            .nav li a{
+                display: block;
+            }
+
+            .nav > li {
+                float: left;
+            }
+
+            .nav li ul {
+                display: none;
+            }
+
+            .nav li ul:not(.hidden){
+                display: block;
+            }
+
+
+        </style>
+
+
+
+</head>
+<body>
+        <div class="header">
+
+            <ul class="nav">
+                <li><a href="#">Inicio</a></li>
+                <li>
+                    <a id="services" href="#">Servicios</a>
+                    <ul id="service-nav" class="hidden">
+                        <li><a href="">SubItem1</a></li>
+                        <li><a href="">SubItem2</a></li>
+                        <li><a id="SubItem3" href="#">SubItem3</a></li>
+                        <li>
+                            <a href="#">SubItem4</a>
+                            <ul id="service-nav-subitem1" class="hidden">        
+                                <li><a href="">SubSubItem1</a></li>
+                                <li><a href="">SubSubItem2</a></li>
+                                <li><a href="">SubSubItem3</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                
+                </li>
+                <li><a href="#">Acerca</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+
+        </div>
+        <script>
+            
+            const services = document.getElementById("services");
+            const service_nav = document.getElementById("service-nav");
+            const service_sub_nav = document.getElementById("service-nav-subitem1");
+
+            services.addEventListener('click', () => {
+                service_nav.classList.toggle("hidden");
+            })
+
+            service_nav.addEventListener('click', () => {
+                service_sub_nav.classList.toggle("hidden");
+            })
+
+
+        </script>
+    </body>
+</html>
